@@ -16,7 +16,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL_PATH = os.getenv("MODEL_PATH", "best_v2.pt")
+from huggingface_hub import hf_hub_download
+
+MODEL_PATH = hf_hub_download(
+    repo_id="codeshujaaa/kenyanmalarai-detect",
+    filename="weights/best_v2.pt"
+)
+
 model = YOLO(MODEL_PATH)
 
 @app.get("/")
