@@ -4,3 +4,4 @@ uvicorn[standard]
 python-multipart
 ultralytics
 pillow
+huggingface_hub
